@@ -12,9 +12,7 @@ RUN npm install -g npm@7 && npm update -g npm
 WORKDIR /home/docker/code/app/src
 COPY package.json package-lock.json ./
 RUN npm install --no-optional && npm cache clean --force
-ENV PATH /home/docker/code/app/node_modules/.bin:$PATH
+ENV PATH /home/docker/code/app/src/node_modules/.bin:$PATH
 
 WORKDIR /home/docker/code/app/src
-COPY src/example.js .
-
-CMD ["node", "example.js"]
+COPY src/example.js ./example.js

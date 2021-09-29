@@ -16,5 +16,3 @@ ENV PATH /home/docker/code/app/node_modules/.bin:$PATH
 
 WORKDIR /home/docker/code/app/
 COPY src ./src
-
-CMD ["node", "src/example.js"]
